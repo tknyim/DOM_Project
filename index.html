@@ -3,12 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DOM Project</title>
+        <title>DOM Project [Memory]</title>
         <link rel="stylesheet" href="style.css" />   
     </head>
     <body>
-        
-        <div id="game"></div>
+        <div id="game">
+            <header>
+                <h1>Memory Game</h1>
+            </header>
+            <section class="score">
+                <!-- <span class="moves">0</span>Move(s) -->
+                <!-- <div class="time"></div> -->
+                <div class="restart" onclick=startGame() >
+                    <i class ="repeat"></i>
+                </div>
+            </section>
+            <div id= "deck" class="card-deck">
+
+            </div>
+        </div>
         <script src="code.js"></script>
     </body>
 </html>
