@@ -7,19 +7,83 @@
         <link rel="stylesheet" href="style.css" />   
     </head>
     <body>
-        <div id="game">
-            <header>
-                <h1>Memory Game</h1>
-            </header>
-            <section class="score">
-                <!-- <span class="moves">0</span>Move(s) -->
-                <!-- <div class="time"></div> -->
-                <div class="restart" onclick=startGame() >
-                    <i class ="repeat"></i>
-                </div>
+        <div id="game" class="game">
+            <h1>Memory Game</h1>
+            <section class ="score">
+                <div id="moves" class="move" data-moves>Move(s): 18 </div>
+                <div id="points" class="points" data-matched>Match: 0</div>
             </section>
-            <div id= "deck" class="card-deck">
-
+            <section class="memory-game">
+                <div class ="memory-card" data-framework="card1">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/a6423d43-4621-30e0-993d-4b81a55533e4.png" alt="card1"/>
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card1">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/a6423d43-4621-30e0-993d-4b81a55533e4.png" alt="card1"/>
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card2">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/9bd35266-13ab-3f3d-abe1-17fce1bc0e6c.png" alt="card2" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card2">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/9bd35266-13ab-3f3d-abe1-17fce1bc0e6c.png" alt="card2" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card3">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/dc136d53-8003-3461-b099-b9eea18e1921.png" alt="card3" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card3">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/dc136d53-8003-3461-b099-b9eea18e1921.png" alt="card3" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card4">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/016a521d-0b44-3274-a44e-d2c63273678f.png" alt="card4" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card4">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/016a521d-0b44-3274-a44e-d2c63273678f.png" alt="card4" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card5">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/9e8d5991-2813-3d94-a0a6-ac062c8cd6fc.png" alt="card5" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card5">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/9e8d5991-2813-3d94-a0a6-ac062c8cd6fc.png" alt="card5" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card6">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/23e207d9-c8ad-3bf3-bf52-16b12a98e8e9.png" alt="card6" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card6">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/23e207d9-c8ad-3bf3-bf52-16b12a98e8e9.png" alt="card6" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card7">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/37062065-8bc1-3e69-a9c8-935d284265c9.png" alt="card7" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card7">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/37062065-8bc1-3e69-a9c8-935d284265c9.png" alt="card7" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card8">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/77aa0f9b-f939-39f9-bad5-28bf9d4bf0a3.png" alt="card9" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+                </div>
+                <div class ="memory-card" data-framework="card8">
+                    <img class="front-card" src="https://cdn-image.pf.dena.com/b0bf411b1e59ff824059847b9384dcc0134c5eba/1/77aa0f9b-f939-39f9-bad5-28bf9d4bf0a3.png" alt="card9" />
+                    <img class="back-card" src="https://cdn.dribbble.com/users/750853/screenshots/10958576/buster_badge.png" alt= "back" />
+            </section>
+            
+            <div id="tally" class="over">
+                <div class="popup">
+                    <div id="finalScore"></div>
+                    <div id="result"></div>
+                </div>
             </div>
         </div>
         <script src="code.js"></script>
