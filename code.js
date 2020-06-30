@@ -1,3 +1,23 @@
+// Cards in JS
+// const cards =[
+// ["backcard.png","card1","./imgs/ff7_01.png"],
+// ["backcard.png","card2","./imgs/ff7_02.png"],
+// ["backcard.png","card3","./imgs/ff7_03.png"],
+// ["backcard.png","card4","./imgs/ff7_04.png"],
+// ["backcard.png","card5","./imgs/ff7_05.png"],
+// ["backcard.png","card6","./imgs/ff7_07.png"],
+// ["backcard.png","card7","./imgs/ff7_08.png"],
+// ["backcard.png","card8","./imgs/ff7_011.png"]
+// ].map(cardArr=>{
+//     return {
+//         id:cardArr[0],
+//         node:createCard(cardArr[0]),
+//         sideShown:'front',
+//         value:cardArr[1],
+//         faceImage:cardArr[2]
+//     }
+// });
+
 const cards = document.querySelectorAll(".cards");
 let cardFlipped = false;
 let waitCard = false; // lock the cards from choosing more than one
@@ -59,12 +79,12 @@ function resetCards(){
     [firstCard, secondCard] = [null, null]
 };
 // Randomizer
-(function shuffleCards(){
-    cards.forEach(card =>{
-        let ranDom = Math.floor(Math.random() * 16); // dimensions
-        card.style.order = ranDom; // randomize the order of items
-    });
-})(); // "()" this function will execute as soon as it is defined. // IIFE (Immediately Invoked Function Expression)
+// (function shuffleCards(){
+//     cards.forEach(card =>{
+//         let ranDom = Math.floor(Math.random() * 16); // dimensions
+//         card.style.order = ranDom; // randomize the order of items
+//     });
+// })(); // "()" this function will execute as soon as it is defined. // IIFE (Immediately Invoked Function Expression)
 
 // Score Counter
 function matchMove(){
