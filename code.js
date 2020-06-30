@@ -1,13 +1,13 @@
 // Cards in JS
 // const cards =[
-// ["backcard.png","card1","./imgs/ff7_01.png"],
-// ["backcard.png","card2","./imgs/ff7_02.png"],
-// ["backcard.png","card3","./imgs/ff7_03.png"],
-// ["backcard.png","card4","./imgs/ff7_04.png"],
-// ["backcard.png","card5","./imgs/ff7_05.png"],
-// ["backcard.png","card6","./imgs/ff7_07.png"],
-// ["backcard.png","card7","./imgs/ff7_08.png"],
-// ["backcard.png","card8","./imgs/ff7_011.png"]
+// ["card","1","./imgs/ff7_01.png"],
+// ["card","2","./imgs/ff7_02.png"],
+// ["card","3","./imgs/ff7_03.png"],
+// ["card","4","./imgs/ff7_04.png"],
+// ["card","5","./imgs/ff7_05.png"],
+// ["card","6","./imgs/ff7_07.png"],
+// ["card","7","./imgs/ff7_08.png"],
+// ["card","8","./imgs/ff7_011.png"]
 // ].map(cardArr=>{
 //     return {
 //         id:cardArr[0],
