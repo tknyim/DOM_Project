@@ -1,7 +1,7 @@
-// let section = document.getElementsByClassName("memory-game");
+// let section = document.getElementsByClassName("deck");
 // function newDivc(){
 //     let newDiv = document.createElement('div');
-//     newDiv.setAttribute("class","memory-cards");
+//     newDiv.setAttribute("class","cards");
 //     section.appendChild(newDiv);
 // };
 // function frontImageCard(){
@@ -12,9 +12,9 @@
 //     };
 // };
 
-const cards = document.querySelectorAll(".memory-card");
+const cards = document.querySelectorAll(".cards");
 let cardFlipped = false;
-let waitCard = false;
+let waitCard = false; // lock the cards from choosing more than one
 let firstCard, secondCard;
 let countMoves = document.getElementById("moves");
 let moves = 18;
@@ -38,7 +38,7 @@ function cardFlip(){
     secondCard = this;
     checkMatch();
 };
-// Check Match = True or False
+// Check Match = Ternary
 function checkMatch(){
     let check = firstCard.dataset.framework === secondCard.dataset.framework;
     check ? matchCard() : notMatch();
@@ -49,13 +49,9 @@ function matchCard(){
     secondCard.removeEventListener("click", cardFlip);
     firstCard.classList.add("match");
     secondCard.classList.add("match");
-    matched ++;
-    let didMatch = document.getElementById('points');
-    didMatch.textContent = `Match: ${matched}`;
-    moves --;
-    let displayMoves = document.getElementById('moves');
-    displayMoves.textContent = `Move(s): ${moves}`;
-    resetCards();
+    matchMove();
+    popUp();
+    // resetCards();
 };
 // Mismatch = False
 function notMatch(){
@@ -67,8 +63,8 @@ function notMatch(){
         let displayMoves = document.getElementById('moves');
         displayMoves.textContent = `Move(s): ${moves}`;
         console.log(moves);
-
-        resetCards();
+        popUp();
+        // resetCards();
     }, 1500);
 };
 // Resetting the Cards
@@ -80,28 +76,44 @@ function resetCards(){
 (function shuffleCards(){
     cards.forEach(card =>{
         let ranDom = Math.floor(Math.random() * 16); // dimensions
-        card.style.order = ranDom;
+        card.style.order = ranDom; // randomize the order of items
     });
-})(); // "()" this function will execute right after it's def. // IIFE 
+})(); // "()" this function will execute as soon as it is defined. // IIFE (Immediately Invoked Function Expression)
 
-// Final Results [NOT WORKING]
+// Score Counter
+function matchMove(){
+    matched ++;
+    let didMatch = document.getElementById('points');
+    didMatch.textContent = `Match: ${matched}`;
+    moves --;
+    let displayMoves = document.getElementById('moves');
+    displayMoves.textContent = `Move(s): ${moves}`;
+}
+
+
+// Final Results
 function popUp(){
-    if (moves <= 0 || matched == 8){
-        let popScore = document.getElementsByClassName("popup");
-        popScore.classList.add("show");
-        document.getElementById("finalScore").innerHTML = matched;
-        document.getElementById("result").innerHTML = tallyPoints(matched);
-    };
-};
-function tallyPoints(){
-    if (matched.length == 8){
-        console.log('Perfect!');
-    } else if (matched.length <= 7 && matched.length >= 5){
-        console.log('Good job!');
-    } else if (matched.length <= 4 && matched.length > 3){
-        console.log('Nice try!');
+    if (moves == -1){
+        moves ++;
+    } else if (moves == 0 || matched == 8){
+        tallyPoints();
+        shuffleCards();
     } else {
-        console.log('Better luck next time.');
+        resetCards();
+    };
+};   
+function tallyPoints(){
+    if (matched == 8){
+        alert(`Your score is ${matched}, perfect!`);
+    } else if (matched <= 7 && matched >= 5){
+        alert(`Your score is ${matched}, good job!`);
+        waitCard = true;
+    } else if (matched <= 4 && matched > 3){
+        alert(`Your score is ${matched}, nice try!`);
+        waitCard = true;
+    } else {
+        alert(`Your score is ${matched}, better luck next time.`);
+        waitCard = true;
     };
 };
 //
