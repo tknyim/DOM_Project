@@ -78,13 +78,13 @@ function resetCards(){
     [cardFlipped, waitCard] = [false, false];
     [firstCard, secondCard] = [null, null]
 };
-// Randomizer
-// (function shuffleCards(){
-//     cards.forEach(card =>{
-//         let ranDom = Math.floor(Math.random() * 16); // dimensions
-//         card.style.order = ranDom; // randomize the order of items
-//     });
-// })(); // "()" this function will execute as soon as it is defined. // IIFE (Immediately Invoked Function Expression)
+Randomizer
+(function shuffleCards(){
+    cards.forEach(card =>{
+        let ranDom = Math.floor(Math.random() * 16); // dimensions
+        card.style.order = ranDom; // randomize the order of items
+    });
+})(); // "()" this function will execute as soon as it is defined. // IIFE (Immediately Invoked Function Expression)
 
 // Score Counter
 function matchMove(){
