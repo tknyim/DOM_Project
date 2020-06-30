@@ -1,17 +1,3 @@
-// let section = document.getElementsByClassName("deck");
-// function newDivc(){
-//     let newDiv = document.createElement('div');
-//     newDiv.setAttribute("class","cards");
-//     section.appendChild(newDiv);
-// };
-// function frontImageCard(){
-//     for (let i = 1; i < 10; i++) {
-//         var img = document.createElement("img");
-//         img.src = "starting_over/card_img/ff7_01" + i;
-//         newDivc.appendChild(img);
-//     };
-// };
-
 const cards = document.querySelectorAll(".cards");
 let cardFlipped = false;
 let waitCard = false; // lock the cards from choosing more than one
@@ -105,17 +91,20 @@ function popUp(){
 function tallyPoints(){
     if (matched == 8){
         alert(`Your score is ${matched}, perfect!`);
+        location.reload();
     } else if (matched <= 7 && matched >= 5){
         alert(`Your score is ${matched}, good job!`);
         waitCard = true;
+        location.reload();
     } else if (matched <= 4 && matched > 3){
         alert(`Your score is ${matched}, nice try!`);
         waitCard = true;
+        location.reload();
     } else {
         alert(`Your score is ${matched}, better luck next time.`);
         waitCard = true;
+        location.reload();
     };
 };
 //
-
 cards.forEach(card => card.addEventListener("click", cardFlip));
