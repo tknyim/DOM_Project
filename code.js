@@ -139,9 +139,9 @@ function tallyPoints(){
 };
 
 // My Background Audio
-function myBack(){
-    myMusic.volume = 0.5;
-};
+// function myBack(){
+//     myMusic.volume = 0.5;
+// };
 
 
 cards.forEach(card => card.addEventListener("click", cardFlip));
