@@ -93,6 +93,11 @@ body {
     border-style: inset;
 }
 
+.my-music {
+visibility: hidden;
+}
+
+
 /* ending */
 .score {
     text-align: left;

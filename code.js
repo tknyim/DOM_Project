@@ -25,6 +25,10 @@ let firstCard, secondCard;
 let countMoves = document.getElementById("moves");
 let moves = 18;
 let matched = 0;
+let myMusic = document.getElementById("my-music");
+let myMatch = document.getElementById("match-sound");
+let myWin = document.getElementById("win-sound");
+let myLoss = document.getElementById("lose-sound");
 
 
 // Card Flip
@@ -55,6 +59,7 @@ function matchCard(){
     secondCard.removeEventListener("click", cardFlip);
     firstCard.classList.add("match");
     secondCard.classList.add("match");
+    myMatch.play()
     matchMove();
     popUp();
     // resetCards();
@@ -78,7 +83,7 @@ function resetCards(){
     [cardFlipped, waitCard] = [false, false];
     [firstCard, secondCard] = [null, null]
 };
-Randomizer
+// Randomizer
 (function shuffleCards(){
     cards.forEach(card =>{
         let ranDom = Math.floor(Math.random() * 16); // dimensions
@@ -94,7 +99,7 @@ function matchMove(){
     moves --;
     let displayMoves = document.getElementById('moves');
     displayMoves.textContent = `Move(s): ${moves}`;
-}
+};
 
 
 // Final Results
@@ -110,6 +115,9 @@ function popUp(){
 };   
 function tallyPoints(){
     if (matched == 8){
+        myWin.play();
+        myMatch.pause();
+        myMusic.pause();
         alert(`Your score is ${matched}, perfect!`);
         location.reload();
     } else if (matched <= 7 && matched >= 5){
@@ -121,10 +129,19 @@ function tallyPoints(){
         waitCard = true;
         location.reload();
     } else {
+        myLoss.play()
+        myMatch.pause();
+        myMusic.pause();
         alert(`Your score is ${matched}, better luck next time.`);
         waitCard = true;
         location.reload();
     };
 };
-//
+
+// My Background Audio
+function myBack(){
+    myMusic.volume = 0.2;
+};
+
+
 cards.forEach(card => card.addEventListener("click", cardFlip));
