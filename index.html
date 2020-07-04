@@ -78,7 +78,7 @@
                     <img class="front-card" src="./imgs/ff7_11.png" alt="card8" />
                     <img class="back-card" src="./imgs/backcard.png" alt= "back" />
             </section>
-            <audio id="my-music" class="my-music" onloadeddata="myBack()" controls autoplay>
+            <audio id="my-music" class="my-music" controls autoplay onloadeddata="myBack()">
                 <source src="audio/background.mp3" type="audio/mpeg">
             </audio>
             <audio id="match-sound" class="match-sound">
@@ -91,10 +91,11 @@
                 <source src="audio/lose.mp3" type="audio/mpeg">
             </audio>
             <div id="tally" class="over">
-                <div class="popup">
+                <div id="pop-up" class="popup">
                     <div id="finalScore"></div>
                     <div id="result"></div>
                 </div>
+                <button id="play-again"onclick="restartMatch()">Play Again</button>
             </div>
         </div>
         <script src="code.js"></script>

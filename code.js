@@ -25,6 +25,7 @@ let firstCard, secondCard;
 let countMoves = document.getElementById("moves");
 let moves = 18;
 let matched = 0;
+// let popOut = document.getElementById(("tally"))
 let myMusic = document.getElementById("my-music");
 let myMatch = document.getElementById("match-sound");
 let myWin = document.getElementById("win-sound");
@@ -107,6 +108,7 @@ function popUp(){
     if (moves == -1){
         moves ++;
     } else if (moves == 0 || matched == 8){
+        // popOut.classList.add("Show")
         tallyPoints();
         shuffleCards();
     } else {
@@ -115,9 +117,9 @@ function popUp(){
 };   
 function tallyPoints(){
     if (matched == 8){
-        myWin.play();
-        myMatch.pause();
-        myMusic.pause();
+        myWin.play()
+        myMatch.pause()
+        myMusic.pause()
         alert(`Your score is ${matched}, perfect!`);
         location.reload();
     } else if (matched <= 7 && matched >= 5){
@@ -130,18 +132,21 @@ function tallyPoints(){
         location.reload();
     } else {
         myLoss.play()
-        myMatch.pause();
-        myMusic.pause();
+        myMatch.pause()
+        myMusic.pause()
         alert(`Your score is ${matched}, better luck next time.`);
         waitCard = true;
         location.reload();
     };
 };
 
-// My Background Audio
-// function myBack(){
-//     myMusic.volume = 0.5;
+// Restart
+// function restartMatch(){
+//     location.reload()
 // };
-
-
+// My Background Audio
+function myBack(){
+    myMusic.volume = 0.4;
+};
+// audio/id-mymusic/"onloadeddata="myBack()""
 cards.forEach(card => card.addEventListener("click", cardFlip));
