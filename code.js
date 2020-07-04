@@ -140,7 +140,7 @@ function tallyPoints(){
 
 // My Background Audio
 function myBack(){
-    myMusic.volume = 0.2;
+    myMusic.volume = 0.5;
 };
 
 
