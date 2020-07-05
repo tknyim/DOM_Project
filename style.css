@@ -151,3 +151,9 @@ visibility: hidden;
     background: none;
 }
 
+.button {
+    background-color: rgba(69, 230, 69, 0.315);
+    border: none;
+    color: white;
+    text-shadow: rgba(186, 187, 181, 0.651);
+}

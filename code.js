@@ -26,12 +26,12 @@ let countMoves = document.getElementById("moves");
 let moves = 16;
 let matched = 0;
 // let popOut = document.getElementById(("tally"));
-let myMusic = document.getElementById("my-back");
-let myMatch = document.getElementById("match-sound");
-let myMiss = document.getElementById("wrong-sound");
-let myWin = document.getElementById("win-sound");
-let myLoss = document.getElementById("lose-sound");
-let myMistake = document.getElementById("no-chance");
+const myMusic = document.getElementById("my-back");
+const myMatch = document.getElementById("match-sound");
+const myMiss = document.getElementById("wrong-sound");
+const myWin = document.getElementById("win-sound");
+const myLoss = document.getElementById("lose-sound");
+const myMistake = document.getElementById("no-chance");
 
 
 // Card Flip
@@ -176,11 +176,17 @@ function tallyPoints(){
 };
 
 // Background music volume
-myMusic.play()
 myMusic.volume = 0.5;
+
+function playMusic(){
+    myMusic.play();
+}
+function pauseMusic() {
+    myMusic.pause();
+}
 
 // Restart
 function restartMatch(){
-    location.reload()
+    location.reload();
 };
 cards.forEach(card => card.addEventListener("click", cardFlip));
