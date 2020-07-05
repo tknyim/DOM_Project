@@ -23,7 +23,7 @@ let cardFlipped = false;
 let waitCard = false; // lock the cards from choosing more than one
 let firstCard, secondCard;
 let countMoves = document.getElementById("moves");
-let moves = 18;
+let moves = 16;
 let matched = 0;
 // let popOut = document.getElementById(("tally"));
 let myMusic = document.getElementById("my-back");
@@ -140,24 +140,36 @@ function tallyPoints(){
         myMusic.pause()
         myWin.play()
         setTimeout(()=>{
-        alert(`Your score is ${matched}, perfect!` + "\n" + "Click on Cloud to restart the game!");
-        // location.reload();
+            alert(`Your score is ${matched}, perfect!` + "\n" + "Click on Cloud to restart the game! 😁");
+            // location.reload();
         }, 1000)
     } else if (matched <= 7 && matched >= 5){
-        alert(`Your score is ${matched}, good job!` + "\n" + 'Game will restart after pressing "OK"');
-        waitCard = true;
-        location.reload();
-    } else if (matched <= 4 && matched > 3){
-        alert(`Your score is ${matched}, nice try!` + "\n" + 'You can do better! Game will restart after pressing "OK"');
-        waitCard = true;
-        location.reload();
-    } else {
-        myLoss.play()
         myMatch.pause()
         myMusic.pause()
-        alert(`Your score is ${matched}, better luck next time.`);
-        waitCard = true;
-        location.reload();
+        myLoss.play()
+        setTimeout(()=>{
+            alert(`Your score is ${matched}, good job!` + "\n" + 'Game will restart after pressing "OK" 🙂');
+            waitCard = true;
+            location.reload();
+        }, 1000)
+    } else if (matched <= 4 && matched > 3){
+        myMatch.pause()
+        myMusic.pause()
+        myLoss.play()
+        setTimeout(()=>{
+            alert(`Your score is ${matched}, nice try!` + "\n" + 'You can do better! Game will restart after pressing "OK" 🙃');
+            waitCard = true;
+            location.reload();
+        }, 1000)
+    } else {
+        myMatch.pause()
+        myMusic.pause()
+        myMistake.play()
+        setTimeout(()=>{
+            alert(`Your score is ${matched}, better luck next time. 🤡`);
+            waitCard = true;
+            location.reload();
+        }, 1500)
     };
 };
 
