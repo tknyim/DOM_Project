@@ -5,6 +5,7 @@
 }
 .game{
     font-family: 'Signika', sans-serif;
+    /* background: rgba(202, 250, 198, 0.247); */
 }
 h1 {
     text-align: center;
@@ -20,8 +21,8 @@ body {
     background-color: rgba(186, 187, 181, 0.651);
 }
 .deck {
-    width: 500px;
-    height: 500px;
+    width: 425px;
+    height: 425px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -52,13 +53,21 @@ body {
 	cursor: default;
     border: #20f77ab9;
     border-style: solid;
-	animation-name: pop;
+    border-radius: 5px;
+	animation-name: popgreen;
 	-webkit-backface-visibility: visible !important;
 	backface-visibility: visible !important;
 	animation-duration: .75s;
 }
+.cards.mismatch{
+    cursor: default;
+    animation: buzzred .75s;
+    border-radius: 5px;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+}
 /* animation */
-@keyframes pop {
+@keyframes popgreen {
 	from {
 		transform: scale3d(1, 1, 1);
 	}
@@ -69,7 +78,16 @@ body {
 		transform: rotateY(180deg);
 	}
 }
-
+@keyframes buzzred {
+    from {
+        border:#f75d20b9;
+        border-style: solid;
+    }
+    to {
+        border:#f72073b9;
+        border-style: solid;
+    }
+}
 /* ________________________ */
 .front-card,
 .back-card {
@@ -80,6 +98,7 @@ body {
     border-radius: 5px;
     backface-visibility: hidden;
 }
+
 .front-card {
     transform: rotateY(180deg);
     background: rgba(255, 255, 255, 0.479); 
@@ -92,14 +111,43 @@ body {
     border: rgba(128, 128, 128, 0.705);
     border-style: inset;
 }
+.back-card:hover {
+    border: solid rgba(233, 190, 70, 0.774);
+    border-radius: 5px;
+    /* position: absolute; */
+    /* background: url("./imgs/hover.gif") no-repeat; */
+    /* background-color: rgba(233, 190, 70, 0.288); */
+    /* background-size: 100px; */
+}
 
 .my-music {
 visibility: hidden;
 }
 
-
 /* ending */
-.score {
-    text-align: left;
-    margin-bottom: 10px;
+.score{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.move,
+.points,
+.play-again {
+    /* background: red; */
+    /* text-align: center; */
+    display: inline-block;
+    /* justify-content: space-evenly; */
+    /* margin-bottom: 10px; */
+    font-family: 'Signika', sans-serif;
+}
+/* .points{
+    float: right;
+} */
+.play-again {
+    cursor: help;
+    padding: 0;
+    border: none;
+    background: none;
+}
+

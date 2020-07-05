@@ -8,78 +8,83 @@
     </head>
     <body>
         <div id="game" class="game">
-            <h1>Memory Game</h1>
+            <h1>
+                <img draggable="false" src="./imgs/logo2.png" width="200">
+            </h1>
             <section class ="score">
                 <div id="moves" class="move" data-moves>Move(s): 18 </div>
-                <div id="points" class="points" data-matched>Match: 0</div>
-                <!-- <button id="play-again"onclick="restartMatch()">Play Again</button> -->
+                <!-- <button id="play-again"onclick="restartMatch()">
+                    <img src="imgs/button_still.gif" draggable="false" width="45" onclick="restartMatch()">
+                </button> -->
+                <img draggable="false" class="play-again" src="imgs/button_still.gif"  width="50" onclick="restartMatch()">
+                <div id="points" class="points" data-matched>Matched: 0</div>
             </section>
             <section class="deck">
                 <div class ="cards" data-framework="card1">
-                    <img class="front-card" src="./imgs/ff7_01.png" alt="card1"/>
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_01.png" alt="card1"/>
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card1">
-                    <img class="front-card" src="./imgs/ff7_01.png" alt="card1"/>
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_01.png" alt="card1"/>
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card2">
-                    <img class="front-card" src="./imgs/ff7_02.png" alt="card2" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_02.png" alt="card2" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card2">
-                    <img class="front-card" src="./imgs/ff7_02.png" alt="card2" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_02.png" alt="card2" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card3">
-                    <img class="front-card" src="./imgs/ff7_03.png" alt="card3" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_03.png" alt="card3" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card3">
-                    <img class="front-card" src="./imgs/ff7_03.png" alt="card3" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_03.png" alt="card3" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card4">
-                    <img class="front-card" src="./imgs/ff7_04.png" alt="card4" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_04.png" alt="card4" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card4">
-                    <img class="front-card" src="./imgs/ff7_04.png" alt="card4" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_04.png" alt="card4" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card5">
-                    <img class="front-card" src="./imgs/ff7_05.png" alt="card5" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_05.png" alt="card5" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card5">
-                    <img class="front-card" src="./imgs/ff7_05.png" alt="card5" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_05.png" alt="card5" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card6">
-                    <img class="front-card" src="./imgs/ff7_07.png" alt="card6" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_07.png" alt="card6" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card6">
-                    <img class="front-card" src="./imgs/ff7_07.png" alt="card6" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_07.png" alt="card6" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card7">
-                    <img class="front-card" src="./imgs/ff7_08.png" alt="card7" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_08.png" alt="card7" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card7">
-                    <img class="front-card" src="./imgs/ff7_08.png" alt="card7" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_08.png" alt="card7" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card8">
-                    <img class="front-card" src="./imgs/ff7_11.png" alt="card8" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_11.png" alt="card8" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
                 </div>
                 <div class ="cards" data-framework="card8">
-                    <img class="front-card" src="./imgs/ff7_11.png" alt="card8" />
-                    <img class="back-card" src="./imgs/backcard.png" alt= "back" />
+                    <img draggable="false" class="front-card" src="./imgs/ff7_11.png" alt="card8" />
+                    <img draggable="false" class="back-card" src="./imgs/backcard.png" alt= "back" />
             </section>
-            <audio id="my-music" class="my-music" controls autoplay onloadeddata="myBack()">
+            <audio id="my-back" class="my-music" autoplay loop>
                 <source src="audio/background.mp3" type="audio/mpeg">
             </audio>
             <audio id="match-sound" class="match-sound">
@@ -90,6 +95,9 @@
             </audio>
             <audio id="lose-sound" class="lose-sound">
                 <source src="audio/lose.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="wrong-sound" class="wrong-sound">
+                <source src="audio/wrong.mp3" type="audio/mpeg">
             </audio>
             <div id="tally" class="over">
                 <div id="pop-up" class="popup">

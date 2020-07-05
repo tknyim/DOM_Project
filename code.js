@@ -25,9 +25,10 @@ let firstCard, secondCard;
 let countMoves = document.getElementById("moves");
 let moves = 18;
 let matched = 0;
-// let popOut = document.getElementById(("tally"))
-let myMusic = document.getElementById("my-music");
+// let popOut = document.getElementById(("tally"));
+let myMusic = document.getElementById("my-back");
 let myMatch = document.getElementById("match-sound");
+let myMiss = document.getElementById("wrong-sound");
 let myWin = document.getElementById("win-sound");
 let myLoss = document.getElementById("lose-sound");
 
@@ -71,10 +72,13 @@ function notMatch(){
     setTimeout(() =>{
         firstCard.classList.remove("flip");
         secondCard.classList.remove("flip");
+        firstCard.classList.add("mismatch");
+        secondCard.classList.add("mismatch");
         moves --;
         let displayMoves = document.getElementById('moves');
         displayMoves.textContent = `Move(s): ${moves}`;
         console.log(moves);
+        myMiss.play();
         popUp();
         // resetCards();
     }, 1500);
@@ -96,7 +100,7 @@ function resetCards(){
 function matchMove(){
     matched ++;
     let didMatch = document.getElementById('points');
-    didMatch.textContent = `Match: ${matched}`;
+    didMatch.textContent = `Matched: ${matched}`;
     moves --;
     let displayMoves = document.getElementById('moves');
     displayMoves.textContent = `Move(s): ${moves}`;
@@ -117,17 +121,19 @@ function popUp(){
 };   
 function tallyPoints(){
     if (matched == 8){
-        myWin.play()
         myMatch.pause()
         myMusic.pause()
-        alert(`Your score is ${matched}, perfect!`);
-        location.reload();
+        myWin.play()
+        setTimeout(()=>{
+        alert(`Your score is ${matched}, perfect!` + "\n" + "Click on Cloud to restart the game!");
+        // location.reload();
+        }, 1000)
     } else if (matched <= 7 && matched >= 5){
-        alert(`Your score is ${matched}, good job!`);
+        alert(`Your score is ${matched}, good job!` + "\n" + 'Game will restart after pressing "OK"');
         waitCard = true;
         location.reload();
     } else if (matched <= 4 && matched > 3){
-        alert(`Your score is ${matched}, nice try!`);
+        alert(`Your score is ${matched}, nice try!` + "\n" + 'You can do better! Game will restart after pressing "OK"');
         waitCard = true;
         location.reload();
     } else {
@@ -140,13 +146,11 @@ function tallyPoints(){
     };
 };
 
+// Background music volume
+myMusic.volume = 0.5;
+
 // Restart
-// function restartMatch(){
-//     location.reload()
-// };
-// My Background Audio
-function myBack(){
-    myMusic.volume = 0.4;
+function restartMatch(){
+    location.reload()
 };
-// audio/id-mymusic/"onloadeddata="myBack()""
 cards.forEach(card => card.addEventListener("click", cardFlip));
