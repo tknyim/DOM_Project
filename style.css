@@ -129,6 +129,11 @@ visibility: hidden;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .move,
