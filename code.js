@@ -31,6 +31,7 @@ let myMatch = document.getElementById("match-sound");
 let myMiss = document.getElementById("wrong-sound");
 let myWin = document.getElementById("win-sound");
 let myLoss = document.getElementById("lose-sound");
+let myMistake = document.getElementById("no-chance");
 
 
 // Card Flip
@@ -74,15 +75,19 @@ function notMatch(){
         secondCard.classList.remove("flip");
         firstCard.classList.add("mismatch");
         secondCard.classList.add("mismatch");
-        moves --;
-        let displayMoves = document.getElementById('moves');
-        displayMoves.textContent = `Move(s): ${moves}`;
-        console.log(moves);
-        myMiss.play();
+        noMatch()
         popUp();
         // resetCards();
-    }, 1500);
+    }, 1000);
 };
+function noMatch(){
+    moves --;
+    let displayMoves = document.getElementById('moves');
+    displayMoves.textContent = `Move(s): ${moves}`;
+    console.log(moves);
+    myMiss.play();
+}
+
 // Resetting the Cards
 function resetCards(){
     [cardFlipped, waitCard] = [false, false];
@@ -106,13 +111,23 @@ function matchMove(){
     displayMoves.textContent = `Move(s): ${moves}`;
 };
 
+// Tweaked add-on *** I'll figure it out later
+// function zeroMatch(){
+//     let stopMus = myMusic.pause()
+//     let playMis = myMistake.play()
+//     if (moves = 12 && matched <= 2){
+//         alert("You're bad")
+//         // return [stopMus, playMis, shuffleCards()]
+//     } else {
+//         resetCards()
+//     };
+// };
 
 // Final Results
 function popUp(){
     if (moves == -1){
         moves ++;
     } else if (moves == 0 || matched == 8){
-        // popOut.classList.add("Show")
         tallyPoints();
         shuffleCards();
     } else {
