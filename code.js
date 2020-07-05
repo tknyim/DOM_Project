@@ -78,7 +78,7 @@ function notMatch(){
         noMatch()
         popUp();
         // resetCards();
-    }, 800);
+    }, 500);
 };
 function noMatch(){
     moves --;
@@ -176,6 +176,7 @@ function tallyPoints(){
 };
 
 // Background music volume
+myMusic.play()
 myMusic.volume = 0.5;
 
 // Restart
