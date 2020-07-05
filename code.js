@@ -78,7 +78,7 @@ function notMatch(){
         noMatch()
         popUp();
         // resetCards();
-    }, 1000);
+    }, 800);
 };
 function noMatch(){
     moves --;
@@ -141,6 +141,8 @@ function tallyPoints(){
         myWin.play()
         setTimeout(()=>{
             alert(`Your score is ${matched}, perfect!` + "\n" + "Click on Cloud to restart the game! 😁");
+            alert("Btw, donate to my Venmo, @Eric-Yim, if you liked my first memory game 🙏" + "\n" + "I'm kidding..")
+            alert("Unless? 🥺 *cough* @Eric-Yim *cough*")
             // location.reload();
         }, 1000)
     } else if (matched <= 7 && matched >= 5){
@@ -148,7 +150,7 @@ function tallyPoints(){
         myMusic.pause()
         myLoss.play()
         setTimeout(()=>{
-            alert(`Your score is ${matched}, good job!` + "\n" + 'Game will restart after pressing "OK" 🙂');
+            alert(`Your score is ${matched}, good job!` + "\n" + 'Game will restart after pressing "OK" 🙂' + "\n" + "Try to get a perfect score this time!");
             waitCard = true;
             location.reload();
         }, 1000)
@@ -157,7 +159,7 @@ function tallyPoints(){
         myMusic.pause()
         myLoss.play()
         setTimeout(()=>{
-            alert(`Your score is ${matched}, nice try!` + "\n" + 'You can do better! Game will restart after pressing "OK" 🙃');
+            alert(`Your score is ${matched}, nice try!` + "\n" + 'You can do better! Game will restart after pressing "OK" 🙃' + "\n" + "Try to get a perfect score this time!");
             waitCard = true;
             location.reload();
         }, 1000)
@@ -166,7 +168,7 @@ function tallyPoints(){
         myMusic.pause()
         myMistake.play()
         setTimeout(()=>{
-            alert(`Your score is ${matched}, better luck next time. 🤡`);
+            alert(`Your score is ${matched}, better luck this time. 🤡`);
             waitCard = true;
             location.reload();
         }, 1500)
