@@ -78,7 +78,7 @@ function notMatch(){
         noMatch()
         popUp();
         // resetCards();
-    }, 500);
+    }, 1000);
 };
 function noMatch(){
     moves --;
