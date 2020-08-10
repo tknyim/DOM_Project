@@ -141,8 +141,8 @@ function tallyPoints(){
         myWin.play()
         setTimeout(()=>{
             alert(`Your score is ${matched}, perfect!` + "\n" + "Click on Cloud to restart the game! 😁");
-            alert("Btw, donate to my Venmo, @Eric-Yim, if you liked my first memory game 🙏" + "\n" + "I'm kidding..")
-            alert("Unless? 🥺 *cough* @Eric-Yim *cough*")
+            // alert("Btw, donate to my Venmo, @Eric-Yim, if you liked my first memory game 🙏" + "\n" + "I'm kidding..")
+            // alert("Unless? 🥺 *cough* @Eric-Yim *cough*")
             // location.reload();
         }, 1000)
     } else if (matched <= 7 && matched >= 5){
